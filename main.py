@@ -16,55 +16,72 @@ def libros_disponibles():
 
 def mostrar_menu():
     print("\n##### BIBLIOTECA CURZAS #######")
-    print("1. Mostrar todos los libros")
-    print("2. Buscar libro por ISBN")
-    print("3. Buscar libros por título")
-    print("4. Filtrar libros por género")
-    print("5. Mostrar libros disponibles")
-    print("6. Registrar préstamo")
-    print("7. Registrar devolución")
-    print("8. Mostrar estadísticas")
-    print("9. Mostrar libro más solicitado")
-    print("10. Mostrar libro más antiguo")
-    print("11. Mostrar cantidad de páginas de un Libro")
-    print("12. Mostrar género más representado")
+    print("1. Registrar nuevo libro")
+    print("2. Mostrar todos los libros")
+    print("3. Buscar libro por ISBN")
+    print("4. Buscar libros por título")
+    print("5. Filtrar libros por género")
+    print("6. Mostrar libros disponibles")
+    print("7. Registrar préstamo")
+    print("8. Registrar devolución")
+    print("9. Mostrar estadísticas")
+    print("10. Mostrar libro más solicitado")
+    print("11. Mostrar libro más antiguo")
+    print("12. Mostrar cantidad de páginas de un Libro")
     print("0. Salir")
 
 def main():
     libros = libros_disponibles()
-    
+
     while True:
         mostrar_menu()
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
+            print("\n--- REGISTRAR NUEVO LIBRO ---")
+            isbn_ingresado = input("Ingrese ISBN: ")
+            nombre_ingresado = input("Ingrese Título: ")
+            autor_ingresado = input("Ingrese Autor: ")
+            anio_ingresado = input("Ingrese Año: ")
+            genero_ingresado = input("Ingrese Género: ")
+            paginas_ingresado = input("Ingrese cantidad de páginas: ")
+
+            nuevo_libro = Libro(isbn_ingresado, nombre_ingresado, autor_ingresado, anio_ingresado, genero_ingresado, paginas_ingresado)
+
+            if nuevo_libro.creacion_valida:
+                libros.append(nuevo_libro)
+                print(f"\nEl libro '{nuevo_libro.nombre}' fue creado correctamente")
+            else:
+                print("La operación fue rechazada. Volviendo al menú...")
+
+        elif opcion == "2":
             print("\nLIBROS DE LA BIBLIOTECA")
             for i, libro in enumerate(libros, 1):
                 print(f"{i}. {libro.nombre}")
 
-        elif opcion == "2":
-            isbn = input("Ingrese ISBN: ")
+        elif opcion == "3":
+            isbn = input("Ingrese ISBN del libro: ")
             encontrado = False
             for libro in libros:
                 if libro.isbn == isbn:
                     print("\nLibro encontrado:")
-                    libro.mostrar_informacion_libro()
+                    libro.mostrar_informacion()
                     encontrado = True
                     break
             if not encontrado:
                 print("No se encontró ningún libro con ese ISBN.")
 
-        elif opcion == "3":
-            fragmento = input("Ingrese una palabra: ").lower()
+        elif opcion == "4":
+            fragmento = input("Ingrese el título del libro a buscar: ").lower()
             encontrado = False
             for libro in libros:
                 if fragmento in libro.nombre.lower():
-                    print(f"\nSe encontro conincidencia \n- {libro.nombre}")
+                    print(f"\nSe encontró coincidencia \n- {libro.nombre}")
                     encontrado = True
             if not encontrado:
-                print("No se encontró el libro")
+                print("No se encontró el libro.")
 
-        elif opcion == "4":
+        elif opcion == "5":
             genero = input("Ingrese género: ").lower()
             encontrado = False
             for libro in libros:
@@ -72,33 +89,33 @@ def main():
                     print(f"- {libro.nombre}")
                     encontrado = True
             if not encontrado:
-                print("No hay libros regustrados que pertenezcan a ese género.")
+                print("No hay libros registrados que pertenezcan a ese género.")
 
-        elif opcion == "5":
+        elif opcion == "6":
             print("\nLIBROS DISPONIBLES")
             for libro in libros:
                 if libro.esta_disponible():
                     print(f"- {libro.nombre}")
 
-        elif opcion == "6":
+        elif opcion == "7":
             isbn = input("Ingrese ISBN del libro a prestar: ")
             for libro in libros:
                 if libro.isbn == isbn:
                     libro.prestar()
                     break
             else:
-                print("El libro no existe o ISBN no coincide con ningún libro")
+                print("El libro no existe o el ISBN no coincide.")
 
-        elif opcion == "7":
+        elif opcion == "8":
             isbn = input("Ingrese ISBN del libro que va devolver: ")
             for libro in libros:
                 if libro.isbn == isbn:
                     libro.devolver()
                     break
             else:
-                print("ISBN de libro no válido")
+                print("ISBN de libro no válido.")
 
-        elif opcion == "8":
+        elif opcion == "9":
             total = len(libros)
             disponibles = 0
             for libro in libros:
@@ -108,10 +125,11 @@ def main():
             print(f"Cantidad total de libros: {total}")
             print(f"Libros disponibles: {disponibles}")
             print(f"Libros prestados: {prestados}")
-            print(f"Porcentaje disponibles: {(disponibles/total)*100}%")
-            print(f"Porcentaje prestados: {(prestados/total)*100}%")
+            if total > 0:
+                print(f"Porcentaje disponibles: {(disponibles/total)*100}%")
+                print(f"Porcentaje prestados: {(prestados/total)*100}%")
 
-        elif opcion == "9":
+        elif opcion == "10":
             if not libros: continue
             mas_solicitado = libros[0]
             for libro in libros:
@@ -121,7 +139,7 @@ def main():
             print(f"Título: {mas_solicitado.nombre}")
             print(f"Cantidad de préstamos: {mas_solicitado.cantidad_prestamos()}")
 
-        elif opcion == "10":
+        elif opcion == "11":
             if not libros: continue
             mas_antiguo = libros[0]
             for libro in libros:
@@ -131,7 +149,7 @@ def main():
             print(f"Título: {mas_antiguo.nombre}")
             print(f"Año: {mas_antiguo.anio_publicacion}")
 
-        elif opcion == "11":
+        elif opcion == "12":
             busqueda = input("Ingrese el ISBN o nombre del libro: ").lower()
             encontrado = False
             for libro in libros:
@@ -142,31 +160,10 @@ def main():
             if not encontrado:
                 print("No se encontró ningún libro con ese ISBN o nombre.")
 
-        elif opcion == "12":
-            generos = []
-            cantidad = []
-            for libro in libros:
-                if libro.genero in generos:
-                    indice = generos.index(libro.genero)
-                    cantidad[indice] += 1
-                else:
-                    generos.append(libro.genero)
-                    cantidad.append(1)
-            
-            num_conteo = 0
-            genero_con_mas_apariciones = ""
-            for i in range(len(generos)):
-                if cantidad[i] > num_conteo:
-                    num_conteo = cantidad[i]
-                    genero_con_mas_apariciones = generos[i]
-            
-            print("\nGÉNERO MÁS REPRESENTADO")
-            print(f"{genero_con_mas_apariciones}: {num_conteo} libros")
-
         elif opcion == "0":
             break
         else:
-            print("Opción inválida, Seleccione una opción correcta.")
+            print("Opción inválida. Seleccione una opción correcta.")
 
 if __name__ == '__main__':
     main()
