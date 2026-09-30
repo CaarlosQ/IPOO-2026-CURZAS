@@ -103,27 +103,28 @@
 
     Libros disponibles:
     
-    ![image](img/Captura de pantalla_opcion1-MostarLibros.png)
+   	<img width="854" height="558" alt="Captura de pantalla_Menu" src="https://github.com/user-attachments/assets/2db1f6f1-7441-48c2-b3e1-1504d14065f4" />
+
     
     Prestamos Activos:
     Para ver los prestamos activos sin devolver, primero hay que registrar un usuario y luego registrar un préstamo.
     
-    ![image](img/Captura de pantalla_registrarUsuario.png)
-    
-    ![image](img/Captura de pantalla_resgitrandoPrestamo.png)
+    <img width="854" height="558" alt="Captura de pantalla_registrarUsuario" src="https://github.com/user-attachments/assets/e0961c8b-cba8-4555-b956-93ba62790484" />
+
+    <img width="854" height="558" alt="Captura de pantalla_resgitrandoPrestamo" src="https://github.com/user-attachments/assets/e78d170e-8f86-440e-864e-464f3b4fa35c" />
+
     
     Ahora si podemos mostrar los préstamos activos
     
-    ![image](img/Captura de pantalla_mostrarPresatamosActivos.png)
+    <img width="854" height="558" alt="Captura de pantalla_mostrarPresatamosActivos" src="https://github.com/user-attachments/assets/1ee2fc55-32f5-4299-a930-da2690f9b5ea" />
+
     
     Préstamo de un usuario:
     
     Para probar esta opción registre un nuevo usuario (ana perez, como en el ejemplo), y más préstamos al primer usuario
-    
-    ![image](img/Captura de pantalla_prestamosDeUnUsuario-opc10.png)
+    <img width="854" height="558" alt="Captura de pantalla_prestamosDeUnUsuario-opc10" src="https://github.com/user-attachments/assets/88c72087-6414-42a7-a286-2512db6f9679" />
 
-​	 ![image](img/Captura de pantalla_prestamosDeUnUsuario-opc10(2).png)
-
+	<img width="854" height="558" alt="Captura de pantalla_prestamosDeUnUsuario-opc10(2)" src="https://github.com/user-attachments/assets/48aa4793-422a-40ae-b3a9-a5d91d936a89" />
 
 
 8. Multiplicidad
