@@ -99,30 +99,30 @@
 
     Menú:
 
-    ![](/home/carlosq/Documentos/mis-archivos/Desarrollo Web/Introducción a la POO/TP2/TP2 - Biblioteca/img/Captura de pantalla_Menu.png)
+    ![](img/Captura de pantalla_Menu.png)
 
     Libros disponibles:
     
-    ![](/home/carlosq/Documentos/mis-archivos/Desarrollo Web/Introducción a la POO/TP2/TP2 - Biblioteca/img/Captura de pantalla_opcion1-MostarLibros.png)
+    ![](img/Captura de pantalla_opcion1-MostarLibros.png)
     
     Prestamos Activos:
     Para ver los prestamos activos sin devolver, primero hay que registrar un usuario y luego registrar un préstamo.
     
-    ![](/home/carlosq/Documentos/mis-archivos/Desarrollo Web/Introducción a la POO/TP2/TP2 - Biblioteca/img/Captura de pantalla_registrarUsuario.png)
+    ![](img/Captura de pantalla_registrarUsuario.png)
     
-    ![](/home/carlosq/Documentos/mis-archivos/Desarrollo Web/Introducción a la POO/TP2/TP2 - Biblioteca/img/Captura de pantalla_resgitrandoPrestamo.png)
+    ![](img/Captura de pantalla_resgitrandoPrestamo.png)
     
     Ahora si podemos mostrar los préstamos activos
     
-    ![](/home/carlosq/Documentos/mis-archivos/Desarrollo Web/Introducción a la POO/TP2/TP2 - Biblioteca/img/Captura de pantalla_mostrarPresatamosActivos.png)
+    ![](img/Captura de pantalla_mostrarPresatamosActivos.png)
     
     Préstamo de un usuario:
     
     Para probar esta opción registre un nuevo usuario (ana perez, como en el ejemplo), y más préstamos al primer usuario
     
-    ![](/home/carlosq/Documentos/mis-archivos/Desarrollo Web/Introducción a la POO/TP2/TP2 - Biblioteca/img/Captura de pantalla_prestamosDeUnUsuario-opc10.png)
+    ![](img/Captura de pantalla_prestamosDeUnUsuario-opc10.png)
 
-​	![](/home/carlosq/Documentos/mis-archivos/Desarrollo Web/Introducción a la POO/TP2/TP2 - Biblioteca/img/Captura de pantalla_prestamosDeUnUsuario-opc10(2).png)
+​	![](img/Captura de pantalla_prestamosDeUnUsuario-opc10(2).png)
 
 
 
