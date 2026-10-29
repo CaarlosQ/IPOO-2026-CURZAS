@@ -1,0 +1,44 @@
+[
+	{
+		"codigo": "1",
+		"titulo": "Super Mario Bros",
+		"genero": "AVENTURA",
+		"precio": 25.2,
+		"stock": 12
+	},
+	{
+		"codigo": "2",
+		"titulo": "The Legend of Zelda",
+		"genero": "AVENTURA",
+		"precio": 45.0,
+		"stock": 5
+	},
+	{
+		"codigo": "3",
+		"titulo": "FIFA 26",
+		"genero": "DEPORTES",
+		"precio": 60.0,
+		"stock": 20
+	},
+	{
+		"codigo": "4",
+		"titulo": "Counter-Strike",
+		"genero": "ACCION",
+		"precio": 15.0,
+		"stock": 50
+	},
+	{
+		"codigo": "5",
+		"titulo": "Civilization VI",
+		"genero": "ESTRATEGIA",
+		"precio": 30.0,
+		"stock": 8
+	},
+	{
+		"codigo": "6",
+		"titulo": "Call Of Duty",
+		"genero": "ACCION",
+		"precio": 45.0,
+		"stock": 30
+	}
+]

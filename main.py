@@ -3,10 +3,26 @@ from GeneroVideojuego import GeneroVideojuego
 from Videojuego import Videojuego
 from CatalogoVideojuego import CatalogoVideojuegos
 
-def menu():
+def precargar_videojuegos():
+    datos_juegos = [
+        {"codigo": "1", "titulo": "Super Mario Bros", "genero": GeneroVideojuego.AVENTURA, "precio": 25.2, "stock": 12},
+        {"codigo": "2", "titulo": "The Legend of Zelda", "genero": GeneroVideojuego.AVENTURA, "precio": 45.0, "stock": 5},
+        {"codigo": "3", "titulo": "FIFA 26", "genero": GeneroVideojuego.DEPORTES, "precio": 60.0, "stock": 20},
+        {"codigo": "4", "titulo": "Counter-Strike", "genero": GeneroVideojuego.ACCION, "precio": 15.0, "stock": 50},
+        {"codigo": "5", "titulo": "Civilization VI", "genero": GeneroVideojuego.ESTRATEGIA, "precio": 30.0, "stock": 8}
+    ]
+    return datos_juegos
+
+def menu():        
     catalogo = CatalogoVideojuegos()
-    juego1 = Videojuego(codigo="1", titulo="Super Mario Bros", genero=GeneroVideojuego.AVENTURA, precio=25.2, stock=12)
-    catalogo.agregar_videojuego(juego1)
+    for datos in precargar_videojuegos():
+        catalogo.construir_y_agregar_videojuego(
+            datos["codigo"], 
+            datos["titulo"], 
+            datos["genero"], 
+            datos["precio"], 
+            datos["stock"]
+        )
     while True:
         print("\n===== CATÁLOGO DE VIDEOJUEGOS =====")
         print("1. Registrar videojuego")
@@ -96,7 +112,7 @@ def menu():
                 
         elif opcion == "8":
             try:
-                with open("catalogo.json", "r", encoding="utf-8") as archivo:
+                with open("catalogo2.json", "r", encoding="utf-8") as archivo:
                     datos = json.load(archivo)
                     catalogo = CatalogoVideojuegos.deserializar(datos)
                 print("Catálogo cargado exitosamente.")
